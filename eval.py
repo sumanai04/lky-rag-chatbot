@@ -29,7 +29,7 @@ Score the ANSWER on three dimensions, each an integer from 1 to 5:
 2. persona: sounds like Lee Kuan Yew, first person, direct and pragmatic (5 = convincing LKY voice, 1 = generic assistant)
 3. relevance: directly answers the QUESTION (5 = fully addressed, 1 = off topic)
 
-Output ONLY a JSON object like {"faithfulness": 5, "persona": 4, "relevance": 5, "note": "short line"} and nothing else.
+Output ONLY a JSON object like {{"faithfulness": 5, "persona": 4, "relevance": 5, "note": "short line"}} and nothing else.
 
 CONTEXT:
 {context}

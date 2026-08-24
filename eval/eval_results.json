@@ -9,7 +9,7 @@
     "questions": 12,
     "judged": 0,
     "retrieval_question_hit_rate": 0.583,
-    "retrieval_fact_recall": 0.625,
+    "retrieval_fact_recall": 0.609,
     "note": "generation layer skipped: DEEPSEEK_API_KEY is not set. Fill .env and rerun to get judge scores."
   },
   "questions": [

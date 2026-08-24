@@ -97,10 +97,9 @@ def main():
 
     scored = [r for r in rows if r["judge_scores"]]
     hit_rate = mean(1.0 if not r["expected_facts_missing"] else 0.0 for r in rows)
-    fact_recall = mean(
-        len(r["expected_facts_found"]) / len(r["expected_facts"])
-        for r in rows if r["expected_facts"]
-    )
+    total_found = sum(len(r["expected_facts_found"]) for r in rows)
+    total_expected = sum(len(r["expected_facts"]) for r in rows)
+    fact_recall = total_found / total_expected if total_expected else 1.0
     aggregate = {
         "questions": len(rows),
         "judged": len(scored),

@@ -4,22 +4,25 @@ A retrieval augmented generation (RAG) chatbot that answers questions as Lee Kua
 
 This is a learning exercise. The bot imitates his voice and reasoning from source material. It does not claim to be him, and it never fabricates quotes or facts outside the retrieved context.
 
-## Demo
+## Try it in your browser
 
 ```bash
-# CLI, single question
-python rag.py ask "What did you feel when Singapore separated from Malaysia?"
-
-# CLI, interactive
-python rag.py
-
-# Web UI (Gradio), open http://localhost:7860
 python app.py
 ```
 
+Then open **http://localhost:7860** in your browser. You get a chat interface with example questions to click, like "What did you feel when Singapore separated from Malaysia in 1965?". Every answer prints under 150 words and stays grounded in retrieved source passages.
+
+To share it with someone on your network, run:
+
+```bash
+GRADIO_SERVER_NAME=0.0.0.0 python app.py
+```
+
+and open `http://<your-ip>:7860` from another device.
+
 Chat transcripts are collected in [docs/chat_examples.md](docs/chat_examples.md).
 
-## Quick start
+## One time setup (needed before the web UI works)
 
 ```bash
 git clone https://github.com/sumanai04/lky-rag-chatbot.git
@@ -31,13 +34,22 @@ cp .env.example .env                 # fill in DEEPSEEK_API_KEY, DEEPSEEK_BASE_U
 
 python prepare.py                    # clean raw text, write data/clean/ + data/sources.json
 python ingest.py                     # chunk, embed, store in Chroma
-python rag.py ask "Your question"    # chat
-python eval.py                       # run the evaluation suite
+
+python app.py                        # web UI on http://localhost:7860
 ```
 
 The vector database (`chroma_db/`) and raw corpus (`data/`) are gitignored. They are rebuilt locally with the commands above.
 
 Without `DEEPSEEK_API_KEY`, retrieval still works and `eval.py` still runs layer 1 (retrieval metrics); generation and the LLM judge raise a clear error telling you to fill `.env`.
+
+## Optional: command line
+
+The same chatbot also runs in a terminal:
+
+```bash
+python rag.py ask "What did you feel when Singapore separated from Malaysia?"
+python rag.py            # interactive loop
+```
 
 ## Architecture
 
@@ -133,11 +145,11 @@ lky-chatbot/
 ├── README.md
 ├── requirements.txt
 ├── .env.example
+├── app.py                       # Gradio web UI, the primary interface
 ├── scripts/download_corpus.sh   # fetch raw corpus, extract PDF text
 ├── prepare.py                   # clean text, write data/clean/ + sources.json
 ├── ingest.py                    # chunk + embed + Chroma
 ├── rag.py                       # hybrid retrieval, rerank, persona prompt, CLI
-├── app.py                       # Gradio chat UI
 ├── eval.py                      # LLM judge evaluation suite
 ├── eval/gold_qa.json            # 12 gold questions with expected facts
 ├── eval/retrieval_results.json  # retrieval layer metrics
@@ -149,3 +161,4 @@ lky-chatbot/
 
 - The corpus is fetched from public sources (National Archives of Singapore, Wikiquote, Wikipedia, Internet Archive) for an educational exercise. It is not redistributed here; use `scripts/download_corpus.sh` to rebuild it.
 - All settings (model, endpoint, temperature, top-k, chunk size, rerank pool) are environment variables in `.env`, documented in `.env.example`.
+- The web UI (`app.py`) loads all models once at startup; the first question after startup is slower because models load, but every question after that answers in a few seconds. The CLI (`rag.py ask`) reloads models per invocation and is slower for one off questions.

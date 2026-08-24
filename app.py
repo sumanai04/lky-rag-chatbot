@@ -42,7 +42,6 @@ demo = gr.ChatInterface(
     title="Lee Kuan Yew (RAG Persona Chatbot)",
     description=DESCRIPTION,
     examples=EXAMPLES,
-    theme="soft",
 )
 
 if __name__ == "__main__":

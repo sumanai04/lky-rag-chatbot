@@ -22,8 +22,8 @@ Chat transcripts are collected in [docs/chat_examples.md](docs/chat_examples.md)
 ## Quick start
 
 ```bash
-git clone <this repo>
-cd lky-chatbot
+git clone https://github.com/sumanai04/lky-rag-chatbot.git
+cd lky-rag-chatbot
 
 bash scripts/download_corpus.sh      # fetch raw corpus into data/
 pip install -r requirements.txt
@@ -122,9 +122,9 @@ Retrieval layer results, measured iteratively:
 | v1 dense only, MiniLM, k=5 | 0.391 | 0.333 |
 | v2 hybrid BM25 + dense, RRF, k=5 | 0.565 | 0.500 |
 | v3 hybrid + cross-encoder rerank, k=8 | 0.609 | 0.583 |
-| v4 with LLM query expansion | see eval_results.json | see eval_results.json |
+| v4 with LLM query expansion | 0.609 | 0.583 |
 
-Known limitation: the remaining retrieval misses are hard paraphrase cases, which is the specific problem query expansion addresses. Judge scores for faithfulness, persona, and relevance are recorded in `eval/eval_results.json` after `eval.py` runs.
+Known limitation: query expansion (v4) changed which questions hit, but the aggregate stayed at 0.609 recall / 0.583 hit rate. It fixed the hardest paraphrase miss ("after you stepped down" now finds "lower me into the grave") at the cost of two other questions, so the net score is unchanged. The remaining misses are hard paraphrase cases that share almost no words with the source quote. Judge scores for faithfulness (3.4), persona (4.7), and relevance (4.9) are recorded in `eval/eval_results.json` after `eval.py` runs.
 
 ## Repository layout
 

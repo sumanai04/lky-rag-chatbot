@@ -16,7 +16,7 @@ python rag.py
 # Web UI (Gradio), open http://localhost:7860
 python app.py
 ```
-
+![Web UI](Web-UI.png)
 Chat transcripts are collected in [docs/chat_examples.md](docs/chat_examples.md).
 
 ## Quick start

@@ -3,6 +3,7 @@
     "model": "deepseek-chat",
     "top_k": 8,
     "temperature": 0.3,
+    "query_expansion": false,
     "judge": "deepseek-chat"
   },
   "aggregate": {

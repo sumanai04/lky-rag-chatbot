@@ -120,6 +120,7 @@ def main():
             "model": bot.model,
             "top_k": bot.top_k,
             "temperature": bot.temperature,
+            "query_expansion": bot.use_expansion,
             "judge": bot.model,
         },
         "aggregate": aggregate,

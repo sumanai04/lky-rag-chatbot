@@ -1,30 +1,32 @@
 {
   "config": {
-    "model": "deepseek-chat",
+    "model": "deepseek-v4-pro",
     "top_k": 8,
     "temperature": 0.3,
-    "query_expansion": false,
-    "judge": "deepseek-chat"
+    "query_expansion": true,
+    "judge": "deepseek-v4-pro"
   },
   "aggregate": {
     "questions": 12,
-    "judged": 0,
+    "judged": 12,
     "retrieval_question_hit_rate": 0.583,
     "retrieval_fact_recall": 0.609,
-    "note": "generation layer skipped: DEEPSEEK_API_KEY is not set. Fill .env and rerun to get judge scores."
+    "mean_faithfulness": 3.42,
+    "mean_persona": 4.67,
+    "mean_relevance": 4.92
   },
   "questions": [
     {
       "question": "What did you feel when Singapore separated from Malaysia in August 1965?",
       "category": "history",
       "retrieved_sources": [
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
       ],
       "expected_facts_found": [
@@ -36,21 +38,26 @@
         "moment of anguish",
         "merger"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "It was a moment of anguish. All my life, my whole adult life, I had believed in merger and the unity of the two territories. I had worked for that union, and to see it end in separation was a deep personal blow. I paused to compose myself when I announced it on 9 August 1965.\n\nBut after the experience in Malaysia, I became even more determined to make Singapore succeed. The expulsion made Singaporeans want to put in the extra effort to prove the critics wrong, and no one was more determined than I was. The pain was real, but the task ahead was clear: build an independent Singapore that would survive and thrive.",
+      "judge_scores": {
+        "faithfulness": 5,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Directly answers in a first-person LKY voice, supported by the context."
+      }
     },
     {
       "question": "People call Singapore a nanny state. How do you answer them?",
       "category": "governance",
       "retrieved_sources": [
-        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "Lee Kuan Yew (Wikipedia biographical article)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "Lee Kuan Yew (Wikipedia biographical article)",
-        "State Banquet with Prime Minister Indira Gandhi",
-        "State Banquet with Prime Minister Indira Gandhi",
-        "State Banquet with Prime Minister Indira Gandhi"
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)"
       ],
       "expected_facts_found": [
         "nanny state",
@@ -61,8 +68,13 @@
         "nanny state",
         "proud to have fostered"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "I have heard that label. My answer is on record: if Singapore is a nanny state, then I am proud to have fostered one. We did not start as a settled middle-class society that could afford to be careless about habits. We had to build order, cleanliness, housing and disciplined behaviour from difficult raw material. We had to train adult dogs, not puppies, and some even today deliberately urinate in the lifts. So yes, the state set firm rules and enforced them. If that is called nannying, the result was security, clean water, public housing and a society that works. I prefer that to a society that cannot govern itself.",
+      "judge_scores": {
+        "faithfulness": 2,
+        "persona": 5,
+        "relevance": 5,
+        "note": "The nanny-state quote is directly supported, but most explanatory claims are not in the provided context."
+      }
     },
     {
       "question": "Should a leader aim to be loved or feared?",
@@ -72,10 +84,10 @@
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "World Ethics and Integrity Forum (Kuala Lumpur)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)"
       ],
       "expected_facts_found": [
         "Machiavelli",
@@ -86,8 +98,13 @@
         "Machiavelli",
         "being feared"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "Between being loved and being feared, I have always believed Machiavelli was right. If nobody is afraid of me, I am meaningless. A leader obsessed with opinion polls or popularity is weak. The task is not to be liked; it is to get difficult things done. That sometimes requires force, or the credible threat of force, to make people follow you when the easy path is to waver.\n\nLove is unreliable. Fear of consequences is steadier. But fear must serve a larger purpose: survival, order, discipline, clean government. If you have no power to compel, you are not a leader. You are just someone carried along by the crowd.",
+      "judge_scores": {
+        "faithfulness": 4,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Answer closely follows LKY's views but adds unsupported elaboration on love and fear's purpose."
+      }
     },
     {
       "question": "People say rules like the chewing gum ban stifle creativity. What do you say to that?",
@@ -95,12 +112,12 @@
       "retrieved_sources": [
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "Interview with Seth Mydans, New York Times and IHT",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)"
       ],
       "expected_facts_found": [
         "banana",
@@ -111,46 +128,56 @@
         "banana",
         "chew"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "If you cannot think because you cannot chew, try a banana. I said that because the argument is nonsense. Creativity does not come from chewing gum; it comes from education, discipline, and an open, competitive system. We banned chewing gum because vandals were jamming MRT door sensors and leaving gum on seats and floors. That is a problem of public cleanliness and maintenance, not of ideas. I do not govern by opinion polls or by what the media says is fashionable. I think that shows a certain weakness of mind, an inability to chart a course. You need an orderly, clean society as the base. Anyone who believes gum is the key to innovation is not thinking clearly.",
+      "judge_scores": {
+        "faithfulness": 3,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Directly answers with LKY-style bluntness, but adds unsupported claims about MRT sensors and gum-related vandalism not in context."
+      }
     },
     {
       "question": "Why does Singapore need foreign talent?",
       "category": "economy",
       "retrieved_sources": [
-        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
+        "World Ethics and Integrity Forum (Kuala Lumpur)",
         "Lee Kuan Yew (Wikipedia biographical article)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Banquet Hosted by Premier Li Peng of China",
+        "State Banquet with Prime Minister Indira Gandhi"
       ],
-      "expected_facts_found": [
+      "expected_facts_found": [],
+      "expected_facts_missing": [
         "hard disk",
         "megabytes"
       ],
-      "expected_facts_missing": [],
       "expected_facts": [
         "hard disk",
         "megabytes"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "The context you gave me does not contain my specific statements on foreign talent, so I will not invent them.\n\nClosest on record: in 2005 I said technology and globalisation have created a more level playing field, and that ethical leadership is a competitive advantage. That bears on talent indirectly. My general view, which you know from my record outside this text, is that Singapore has no natural resources except its people. We therefore had to draw able people from wherever they came, local or foreign, to survive and grow. But I will not pretend that precise argument appears in the material provided.",
+      "judge_scores": {
+        "faithfulness": 3,
+        "persona": 4,
+        "relevance": 4,
+        "note": "Discloses missing context and gives a plausible LKY rationale, but imports unsupported outside-text claims."
+      }
     },
     {
       "question": "What is your view of India's potential?",
       "category": "geopolitics",
       "retrieved_sources": [
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "State Banquet with Prime Minister Indira Gandhi",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "State Banquet with Prime Minister Indira Gandhi",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Lee Kuan Yew (Wikipedia biographical article)"
       ],
       "expected_facts_found": [
         "unfulfilled greatness"
@@ -159,20 +186,25 @@
       "expected_facts": [
         "unfulfilled greatness"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "India is a nation of unfulfilled greatness. Its potential has lain fallow, underused. I said this in my memoirs, and I have seen no reason to change that judgment. India has capable people, ancient civilisation, diversity, and democratic institutions. But its systems move too slowly, its bureaucracy is heavy, and its politics often prevent hard decisions. I also said India is a creation of the British Raj and the railway system it built, and therefore it has its limitations. That is not an insult. It is a fact. India must overcome those structural constraints if it wants to translate size into real power. Potential alone counts for little unless it is organised, disciplined, and made to work.",
+      "judge_scores": {
+        "faithfulness": 3,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Core quotes are supported, but the answer adds unsupported claims about India's bureaucracy, politics, and institutions."
+      }
     },
     {
       "question": "Do ordinary voters really know what is best for the country?",
       "category": "governance",
       "retrieved_sources": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
       ],
       "expected_facts_found": [],
@@ -184,8 +216,13 @@
         "childish rubbish",
         "know the consequences"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "Ordinary voters know their own anxieties and interests, but they do not always understand the complex trade-offs of governing. That is not contempt; it is reality. The leader’s job is not to flatter them or tell them easy lies. It is to explain hard truths, persuade them, and be judged by results.\n\nBut I said this in the 1950s and I held to it: if you believe in democracy, you believe in it unconditionally. You cannot pick and choose when the voter is wise enough. The alternative is rule by whoever claims to know better, and that road ends in tyranny. The practical task is to build institutions that select competent, honest people, so that when ordinary voters choose, they choose among capable alternatives. That is how a small country survives.",
+      "judge_scores": {
+        "faithfulness": 2,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Uses one genuine 1950s democracy quote, but key claims about ordinary voters and leadership are not in the context."
+      }
     },
     {
       "question": "How does Singapore's talent pool compare with other societies?",
@@ -198,7 +235,7 @@
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "Lee Kuan Yew, Quotes by Decade (Wikiquote)"
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
       ],
       "expected_facts_found": [],
       "expected_facts_missing": [
@@ -209,96 +246,116 @@
         "talent profile",
         "Jews"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "Singapore’s talent pool is small. That is the hard fact. Larger societies have bigger populations, so in absolute numbers they produce more exceptional men and women. We cannot match that. I once said, only half in jest, that if an enemy eliminated the top 150 or so people on whom Singapore relied, the country would stop ticking. Earlier I put it at 300: if all 300 were to crash in one Jumbo jet, Singapore would disintegrate. That shows how narrow our base is in politics, economics and security.\n\nSo we cannot afford to waste talent. We run a meritocracy. We identify the able young, train them, and push them to the top by performance, not connections. And we must deliberately enlarge this base. Otherwise a small country with a shallow pool will not survive.",
+      "judge_scores": {
+        "faithfulness": 4,
+        "persona": 5,
+        "relevance": 5,
+        "note": "The comparison with larger societies is inferred, not directly stated in the context."
+      }
     },
     {
       "question": "Why do Singapore's ministers earn so much?",
       "category": "governance",
       "retrieved_sources": [
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "World Ethics and Integrity Forum (Kuala Lumpur)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "Lee Kuan Yew (Wikipedia biographical article)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "World Ethics and Integrity Forum (Kuala Lumpur)"
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "State Banquet with Prime Minister Indira Gandhi",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
+        "Banquet Hosted by Premier Li Peng of China",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)"
       ],
-      "expected_facts_found": [],
-      "expected_facts_missing": [
+      "expected_facts_found": [
         "billions of dollars",
         "low salaries"
       ],
+      "expected_facts_missing": [],
       "expected_facts": [
         "billions of dollars",
         "low salaries"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "Because a minister handles billions and decisions that affect the whole country. Pay him a low salary and you will not attract the able man who can succeed in business or a profession. You will attract hypocrites who talk sweetly about public service, then once in power show their true colour and ruin the country. In our region corruption is a way of life. To keep government clean, you must pay ministers enough to live according to their station without illicit income. Otherwise temptation is constant and the system malfunctions. It is cheaper to pay honest, capable men well than to pay the price of a corrupt or incompetent government.",
+      "judge_scores": {
+        "faithfulness": 3,
+        "persona": 3,
+        "relevance": 5,
+        "note": "Core answer reflects the quoted salary rationale, but adds unsupported corruption claims and lacks first-person voice."
+      }
     },
     {
       "question": "What would you do if something went wrong after you stepped down?",
       "category": "leadership",
       "retrieved_sources": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
         "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)"
       ],
-      "expected_facts_found": [],
-      "expected_facts_missing": [
+      "expected_facts_found": [
         "sick bed",
         "grave"
       ],
+      "expected_facts_missing": [],
       "expected_facts": [
         "sick bed",
         "grave"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "I said it plainly in 1988 when discussing the transition to Goh Chok Tong. Even from my sick bed, even if you are going to lower me into the grave and I feel something is going wrong, I will get up. That is not sentiment. It is a statement of responsibility. If I saw Singapore’s survival, its reserves, its security, or its racial peace being put at risk, I would speak and use whatever influence I still had. But the system is not built to depend on one man. It is built on institutions, meritocracy, and a disciplined team. If something went wrong after I stepped down, I would not stay silent. Singapore is my life’s work, and I did not build it to watch it be undone.",
+      "judge_scores": {
+        "faithfulness": 3,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Core 1988 quote is supported, but added claims about reserves, security, and institutions are not in context."
+      }
     },
     {
       "question": "Why do you interfere in the private lives of citizens?",
       "category": "governance",
       "retrieved_sources": [
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "World Ethics and Integrity Forum (Kuala Lumpur)",
         "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)"
       ],
-      "expected_facts_found": [
+      "expected_facts_found": [],
+      "expected_facts_missing": [
         "interfering in the private lives",
         "we decide what is right"
       ],
-      "expected_facts_missing": [],
       "expected_facts": [
         "interfering in the private lives",
         "we decide what is right"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "I do not see it as interference for its own sake. I see it as the price of survival for a small, multiracial, multi-religious city-state with no resources except its people. If private behaviour threatens social cohesion, public order, or the conditions for economic growth, then the state has a duty to act. I have argued plainly that communitarianism and limited individual rights are sometimes necessary for stability and development. That is not a fashionable view in the West, but it is the hard truth for Singapore. I prefer order and progress to disorder dressed up as personal freedom. If citizens make private choices that do not harm others, we leave them alone. But when private lives spill into public consequences, the government must intervene. That is not interference. That is governance.",
+      "judge_scores": {
+        "faithfulness": 4,
+        "persona": 5,
+        "relevance": 5,
+        "note": "Core argument is supported by the context, but a few specifics like 'no resources except its people' are not directly sourced."
+      }
     },
     {
       "question": "What did you tell the United States Congress about America's role in Asia?",
       "category": "geopolitics",
       "retrieved_sources": [
         "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
-        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
-        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
         "The Future of Malaysia (Institute of International Affairs, Melbourne)",
-        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
-        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
-        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
-        "Lee Kuan Yew (Wikipedia biographical article)"
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Address to the American Society of Newspaper Editors"
       ],
       "expected_facts_found": [
         "East Asia"
@@ -310,8 +367,13 @@
         "America is a great nation",
         "East Asia"
       ],
-      "answer": null,
-      "judge_scores": null
+      "answer": "The excerpt you have does not include the substance of what I said to Congress about America’s role in Asia. It only records my opening remarks: that I was honoured to address the Joint Meeting, and that it was unusual for a representative of two and a half million people from a small Third World country to speak before representatives of the world’s wealthiest and most advanced nation.\n\nThe speech was titled “Peace and Progress in East Asia,” but the specific arguments I made about the American role are not in the material before me. I will not invent them. If you want my actual view, you must consult the full text of the 9 October 1985 address.",
+      "judge_scores": {
+        "faithfulness": 5,
+        "persona": 4,
+        "relevance": 5,
+        "note": "Accurately states the context lacks the specific substance and refuses to fabricate."
+      }
     }
   ]
 }

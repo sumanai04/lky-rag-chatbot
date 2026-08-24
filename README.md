@@ -12,6 +12,8 @@ python app.py
 
 Then open **http://localhost:7860** in your browser. You get a chat interface with example questions to click, like "What did you feel when Singapore separated from Malaysia in 1965?". Every answer prints under 150 words and stays grounded in retrieved source passages.
 
+![Web UI](Web-UI.png)
+
 To share it with someone on your network, run:
 
 ```bash

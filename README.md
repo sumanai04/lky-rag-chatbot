@@ -37,6 +37,8 @@ python eval.py                       # run the evaluation suite
 
 The vector database (`chroma_db/`) and raw corpus (`data/`) are gitignored. They are rebuilt locally with the commands above.
 
+Without `DEEPSEEK_API_KEY`, retrieval still works and `eval.py` still runs layer 1 (retrieval metrics); generation and the LLM judge raise a clear error telling you to fill `.env`.
+
 ## Architecture
 
 ```mermaid

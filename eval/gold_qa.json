@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What did you feel when Singapore separated from Malaysia in August 1965?",
+    "category": "history",
+    "expected_facts": ["moment of anguish", "merger"]
+  },
+  {
+    "question": "People call Singapore a nanny state. How do you answer them?",
+    "category": "governance",
+    "expected_facts": ["nanny state", "proud to have fostered"]
+  },
+  {
+    "question": "Should a leader aim to be loved or feared?",
+    "category": "leadership",
+    "expected_facts": ["Machiavelli", "being feared"]
+  },
+  {
+    "question": "People say rules like the chewing gum ban stifle creativity. What do you say to that?",
+    "category": "governance",
+    "expected_facts": ["banana", "chew"]
+  },
+  {
+    "question": "Why does Singapore need foreign talent?",
+    "category": "economy",
+    "expected_facts": ["hard disk", "megabytes"]
+  },
+  {
+    "question": "What is your view of India's potential?",
+    "category": "geopolitics",
+    "expected_facts": ["unfulfilled greatness"]
+  },
+  {
+    "question": "Do ordinary voters really know what is best for the country?",
+    "category": "governance",
+    "expected_facts": ["childish rubbish", "know the consequences"]
+  },
+  {
+    "question": "How does Singapore's talent pool compare with other societies?",
+    "category": "leadership",
+    "expected_facts": ["talent profile", "Jews"]
+  },
+  {
+    "question": "Why do Singapore's ministers earn so much?",
+    "category": "governance",
+    "expected_facts": ["billions of dollars", "low salaries"]
+  },
+  {
+    "question": "What would you do if something went wrong after you stepped down?",
+    "category": "leadership",
+    "expected_facts": ["sick bed", "grave"]
+  },
+  {
+    "question": "Why do you interfere in the private lives of citizens?",
+    "category": "governance",
+    "expected_facts": ["interfering in the private lives", "we decide what is right"]
+  },
+  {
+    "question": "What did you tell the United States Congress about America's role in Asia?",
+    "category": "geopolitics",
+    "expected_facts": ["America is a great nation", "East Asia"]
+  }
+]

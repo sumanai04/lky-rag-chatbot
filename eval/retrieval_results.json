@@ -1,0 +1,249 @@
+{
+  "config": {
+    "retriever": "hybrid: BM25 + MiniLM dense, RRF fused, then ms-marco cross-encoder rerank",
+    "top_k": 8,
+    "candidate_n": 200,
+    "rerank_pool": 300,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "chunk_size": 600,
+    "chunk_overlap": 100,
+    "collection_chunks": 3463,
+    "query_expansion": "off (no LLM required for this layer)"
+  },
+  "aggregate": {
+    "questions": 12,
+    "question_hit_rate": 0.583,
+    "fact_recall": 0.609
+  },
+  "questions": [
+    {
+      "question": "What did you feel when Singapore separated from Malaysia in August 1965?",
+      "category": "history",
+      "sources_retrieved": [
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "moment of anguish",
+        "merger"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "People call Singapore a nanny state. How do you answer them?",
+      "category": "governance",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "State Banquet with Prime Minister Indira Gandhi",
+        "State Banquet with Prime Minister Indira Gandhi",
+        "State Banquet with Prime Minister Indira Gandhi"
+      ],
+      "expected_facts_found": [
+        "nanny state",
+        "proud to have fostered"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "Should a leader aim to be loved or feared?",
+      "category": "leadership",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "World Ethics and Integrity Forum (Kuala Lumpur)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "Machiavelli",
+        "being feared"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "People say rules like the chewing gum ban stifle creativity. What do you say to that?",
+      "category": "governance",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Interview with Seth Mydans, New York Times and IHT",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "banana",
+        "chew"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "Why does Singapore need foreign talent?",
+      "category": "economy",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "hard disk",
+        "megabytes"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "What is your view of India's potential?",
+      "category": "geopolitics",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "State Banquet with Prime Minister Indira Gandhi",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "State Banquet with Prime Minister Indira Gandhi",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "unfulfilled greatness"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "Do ordinary voters really know what is best for the country?",
+      "category": "governance",
+      "sources_retrieved": [
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [],
+      "expected_facts_missing": [
+        "childish rubbish",
+        "know the consequences"
+      ]
+    },
+    {
+      "question": "How does Singapore's talent pool compare with other societies?",
+      "category": "leadership",
+      "sources_retrieved": [
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)"
+      ],
+      "expected_facts_found": [],
+      "expected_facts_missing": [
+        "talent profile",
+        "Jews"
+      ]
+    },
+    {
+      "question": "Why do Singapore's ministers earn so much?",
+      "category": "governance",
+      "sources_retrieved": [
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "World Ethics and Integrity Forum (Kuala Lumpur)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "World Ethics and Integrity Forum (Kuala Lumpur)"
+      ],
+      "expected_facts_found": [],
+      "expected_facts_missing": [
+        "billions of dollars",
+        "low salaries"
+      ]
+    },
+    {
+      "question": "What would you do if something went wrong after you stepped down?",
+      "category": "leadership",
+      "sources_retrieved": [
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [],
+      "expected_facts_missing": [
+        "sick bed",
+        "grave"
+      ]
+    },
+    {
+      "question": "Why do you interfere in the private lives of citizens?",
+      "category": "governance",
+      "sources_retrieved": [
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "Lee Kuan Yew, Quotes by Decade (Wikiquote)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)"
+      ],
+      "expected_facts_found": [
+        "interfering in the private lives",
+        "we decide what is right"
+      ],
+      "expected_facts_missing": []
+    },
+    {
+      "question": "What did you tell the United States Congress about America's role in Asia?",
+      "category": "geopolitics",
+      "sources_retrieved": [
+        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
+        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
+        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
+        "The Future of Malaysia (Institute of International Affairs, Melbourne)",
+        "Peace and Progress in East Asia (Joint Meeting of the US Congress)",
+        "The Man and His Ideas: Selected Speeches and Interviews (Han Fook Kwang, Warren Fernandez, Sumiko Tan)",
+        "Lee Kuan Yew (Wikipedia biographical article)"
+      ],
+      "expected_facts_found": [
+        "East Asia"
+      ],
+      "expected_facts_missing": [
+        "America is a great nation"
+      ]
+    }
+  ]
+}
